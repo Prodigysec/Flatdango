@@ -49,16 +49,18 @@ document.addEventListener('DOMContentLoaded', function () {
                 const movieImage = document.querySelector('.movie-image');
                 imageElement.src = individualFilmPoster[index];
                 imageElement.alt = 'Movie Poster';
+                movieImage.innerHTML = '';
                 movieImage.appendChild(imageElement);
 
 
                 const paragraphElement = document.createElement('p');
                 const buttonElement = document.createElement('button');
                 const movieDescription = document.querySelector('.movie-description');
-                
+
                 paragraphElement.className = 'movie-description-text';
                 paragraphElement.textContent = individualFilmDescription[index];
                 buttonElement.className = 'buy-ticket-btn';
+                movieDescription.innerHTML = '';
                 buttonElement.textContent = 'Buy Ticket';
 
                 movieDescription.appendChild(paragraphElement);
@@ -75,8 +77,9 @@ document.addEventListener('DOMContentLoaded', function () {
                     childParagraph.className = movieInfoClassNames[i];
                     movieInfo1.appendChild(childParagraph);
                 }
-                
+
                 const parentMovieDetails = document.querySelector('.movie-details-right');
+                parentMovieDetails.innerHTML = '';
                 parentMovieDetails.appendChild(movieInfo1);
             });
         });
