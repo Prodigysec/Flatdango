@@ -8,17 +8,17 @@ document.addEventListener('DOMContentLoaded', function () {
 
     const filmsList = document.querySelector(".films-list");
 
+    let individualFilmTitle = [];
+    let individualFilmRuntime = [];
+    let individualFilmCapacity = [];
+    let individualFilmShowtime = [];
+    let individualFilmTicketsSold = [];
+    let individualFilmDescription = [];
+    let individualFilmPoster = [];
+
     fetch("http://localhost:3000/films")
         .then(result => { return result.json(); })
         .then(data => {
-            let individualFilmTitle = [];
-            let individualFilmRuntime = [];
-            let individualFilmCapacity = [];
-            let individualFilmShowtime = [];
-            let individualFilmTicketsSold = [];
-            let individualFilmDescription = [];
-            let individualFilmPoster = [];
-
             for (const key in data) {
                 individualFilmTitle.push(data[key].title);
                 individualFilmRuntime.push(data[key].runtime);
@@ -34,8 +34,11 @@ document.addEventListener('DOMContentLoaded', function () {
                 filmTitle.textContent = element;
                 filmsList.appendChild(filmTitle);
             });
+            attachEventListener();
 
         }).catch(error => {
             console.error(error);
         });
+
+    
 });
