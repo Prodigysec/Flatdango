@@ -35,5 +35,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 filmsList.appendChild(filmTitle);
             });
 
+        }).catch(error => {
+            console.error(error);
         });
 });
