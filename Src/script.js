@@ -40,5 +40,14 @@ document.addEventListener('DOMContentLoaded', function () {
             console.error(error);
         });
 
-    
+    function attachEventListener() {
+        const filmTitleElements = document.querySelectorAll('.films-list p');
+        const movieDetails = document.querySelector('#movie-details');
+
+        filmTitleElements.forEach((filmTitleElement, index) => {
+            filmTitleElement.addEventListener('click', event => {
+                
+            });
+        });
+    }
 });
