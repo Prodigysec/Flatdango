@@ -41,6 +41,10 @@ body {
   text-align: center;
 }
 
+.films-list p:hover {
+  cursor: pointer;
+}
+
 #movie-details {
   width: 70%;
   padding-left: 20px;
