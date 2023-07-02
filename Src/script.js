@@ -75,6 +75,9 @@ document.addEventListener('DOMContentLoaded', function () {
                     childParagraph.className = movieInfoClassNames[i];
                     movieInfo1.appendChild(childParagraph);
                 }
+                
+                const parentMovieDetails = document.querySelector('.movie-details-right');
+                parentMovieDetails.appendChild(movieInfo1);
             });
         });
     }
