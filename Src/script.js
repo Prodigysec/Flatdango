@@ -6,7 +6,7 @@ document.addEventListener('DOMContentLoaded', function () {
         movieContainer.scrollIntoView({ behavior: 'smooth' });
     });
 
-    const filmsList = document.getElementsByClassName("films-list");
+    const filmsList = document.querySelector(".films-list");
 
     fetch("http://localhost:3000/films")
         .then(result => { return result.json(); })
@@ -28,6 +28,12 @@ document.addEventListener('DOMContentLoaded', function () {
                 individualFilmDescription.push(data[key].description);
                 individualFilmPoster.push(data[key].poster);
             }
+
+            individualFilmTitle.forEach(function (element) {
+                const filmTitle = document.createElement('p');
+                filmTitle.textContent = element;
+                filmsList.appendChild(filmTitle);
+            });
 
         });
 });
