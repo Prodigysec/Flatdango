@@ -46,7 +46,13 @@ document.addEventListener('DOMContentLoaded', function () {
 
         filmTitleElements.forEach((filmTitleElement, index) => {
             filmTitleElement.addEventListener('click', event => {
-                
+                const clickedName = event.target.textContent;
+
+                const imageElement = document.createElement('img');
+                const movieImage = document.querySelector('.movie-image');
+                imageElement.src = individualFilmPoster[index];
+                imageElement.alt = 'Movie Poster';
+                movieImage.appendChild(imageElement);
             });
         });
     }
