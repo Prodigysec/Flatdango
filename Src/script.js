@@ -42,12 +42,9 @@ document.addEventListener('DOMContentLoaded', function () {
 
     function attachEventListener() {
         const filmTitleElements = document.querySelectorAll('.films-list p');
-        const movieDetails = document.querySelector('#movie-details');
 
         filmTitleElements.forEach((filmTitleElement, index) => {
             filmTitleElement.addEventListener('click', event => {
-                const clickedName = event.target.textContent;
-
                 const imageElement = document.createElement('img');
                 const movieImage = document.querySelector('.movie-image');
                 imageElement.src = individualFilmPoster[index];
@@ -66,6 +63,18 @@ document.addEventListener('DOMContentLoaded', function () {
 
                 movieDescription.appendChild(paragraphElement);
                 movieDescription.appendChild(buttonElement);
+
+                const movieInfo1 = document.createElement('div');
+                const movieInfoClassNames = ['movie-runtime', 'movie-capacity', 'movie-showtime', 'movie-tickets-sold'];
+                for (let i = 0; i < 4; i++) {
+                    const childParagraph = document.createElement('p');
+                    childParagraph.textContent = i === 0 ? individualFilmRuntime[index] :
+                        i === 1 ? individualFilmCapacity[index] :
+                            i === 2 ? individualFilmShowtime[index] :
+                                individualFilmTicketsSold[index];
+                    childParagraph.className = movieInfoClassNames[i];
+                    movieInfo1.appendChild(childParagraph);
+                }
             });
         });
     }
