@@ -53,6 +53,19 @@ document.addEventListener('DOMContentLoaded', function () {
                 imageElement.src = individualFilmPoster[index];
                 imageElement.alt = 'Movie Poster';
                 movieImage.appendChild(imageElement);
+
+
+                const paragraphElement = document.createElement('p');
+                const buttonElement = document.createElement('button');
+                const movieDescription = document.querySelector('.movie-description');
+                
+                paragraphElement.className = 'movie-description-text';
+                paragraphElement.textContent = individualFilmDescription[index];
+                buttonElement.className = 'buy-ticket-btn';
+                buttonElement.textContent = 'Buy Ticket';
+
+                movieDescription.appendChild(paragraphElement);
+                movieDescription.appendChild(buttonElement);
             });
         });
     }
