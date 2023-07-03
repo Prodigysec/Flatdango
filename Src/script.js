@@ -70,10 +70,10 @@ document.addEventListener('DOMContentLoaded', function () {
                 const movieInfoClassNames = ['movie-runtime', 'movie-capacity', 'movie-showtime', 'movie-tickets-sold'];
                 for (let i = 0; i < 4; i++) {
                     const childParagraph = document.createElement('p');
-                    childParagraph.textContent = i === 0 ? individualFilmRuntime[index] :
-                        i === 1 ? individualFilmCapacity[index] :
-                            i === 2 ? individualFilmShowtime[index] :
-                                individualFilmTicketsSold[index];
+                    childParagraph.textContent = i === 0 ? `Minutes: ${individualFilmRuntime[index]}` :
+                        i === 1 ? `Available Seats: ${individualFilmCapacity[index]}` :
+                            i === 2 ? `Time: ${individualFilmShowtime[index]}` :
+                                `Tickets Sold: ${individualFilmCapacity[index] - individualFilmTicketsSold[index]}`;
                     childParagraph.className = movieInfoClassNames[i];
                     movieInfo1.appendChild(childParagraph);
                 }
